@@ -38,7 +38,7 @@
             <a href="#/available#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span><img src="<?php echo base_url() ?>/media/img/<?php echo $_SESSION['foto']?>" class="foto-profile"/></span>&nbsp;<?php echo $_SESSION['username'] ?> <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="profile.php"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profile</a></li>
-              <!--<li><a href="myvideo.php"><span class="glyphicon glyphicon-play" aria-hidden="true"></span> My Videos</a></li>-->
+              <li><a href="myvideo.php"><span class="glyphicon glyphicon-play" aria-hidden="true"></span> My Videos</a></li>
               <?php if($_SESSION['level'] == 1) { ?>
               <li><a href="admin.php"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Admin Panel</a></li>
               <?php } ?>

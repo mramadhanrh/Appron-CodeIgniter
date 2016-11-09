@@ -35,9 +35,7 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 				$this->session->set_userdata("username", $username);
 				$this->session->set_userdata("isLogin", true);
 				$level = $result[0]->level;
-				$foto = $result[0]->foto_profile;
 				$this->session->set_userdata("level", $level);
-				$this->session->set_userdata("foto", $foto);
 
 				//Jika login berhasil, arahkan ke controller home
 				redirect("home");
