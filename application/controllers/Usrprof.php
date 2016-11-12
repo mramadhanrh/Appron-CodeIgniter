@@ -40,11 +40,11 @@ class Usrprof extends CI_Controller {
         $usr_tmp = $this->db->get("t_user");
         $usr_tmp1 = $usr_tmp->result();
         $usr_tmp2 = $usr_tmp1[0]->fullname;
-        $id_user = $usr_tmp1[0]->id_user;
+        $username = $usr_tmp1[0]->username;
         
         $data['usr']  = $usr_tmp2;
-        $data['foto_profile']  = $usr_tmp1[0]->foto_profile;
-        $data['id_user']  = $id_user;
+        $data['foto']  = $usr_tmp1[0]->foto;
+        $data['username']  = $username;
 		
 		
         //$this->load->view('v_usrprof', array('error' => ' ' ));
@@ -144,9 +144,9 @@ class Usrprof extends CI_Controller {
     function do_tambah() {
     //untuk ke db
     $post = $this->input->post(NULL, TRUE);
-    $foto_profile = $_FILES['foto_profile']['name'];
-    $path = 'upload/'.$foto_profile;
-    $post['foto_profile'] = $path;
+    $foto = $_FILES['foto']['name'];
+    $path = 'upload/'.$foto;
+    $post['foto'] = $path;
     $this->load->model("usrprof_model");
     if (!empty($this->usrprof_model->read("username'".$post['username']."'"))) {
         $this->session->set_flashdata("error", "Username '".$post['username']."' Sudah ada");
@@ -154,18 +154,18 @@ class Usrprof extends CI_Controller {
         $this->usrprof_model->create($post);
         $this->session->set_flashdata("success", "Data berhasil ditambahkan");
     //untuk ke folder
-    $tmp_foto_profile = $_FILES['foto_profile']['tmp_name'];
-    move_uploaded_file($tmp_foto_profile, $path);
+    $tmp_foto = $_FILES['foto']['tmp_name'];
+    move_uploaded_file($tmp_foto, $path);
     }
     redirect("usrprof");
 }
 	
-	function edit($id_user) {
+	function edit($username) {
 		$this->load->model("usrprof_model");
 		 
 		
 		// Mengambil data berdasarkan id (WHERE id=xxx)
-		$result = $this->usrprof_model->read("id_user = '$id_user'");
+		$result = $this->usrprof_model->read("username = '$username'");
 		$data['form_edit']=TRUE;
 		$data['result'] = @$result[0];
         
@@ -176,30 +176,30 @@ class Usrprof extends CI_Controller {
         $usr_tmp = $this->db->get("t_user");
         $usr_tmp1 = $usr_tmp->result();
         $usr_tmp2 = $usr_tmp1[0]->fullname;
-        $id_user = $usr_tmp1[0]->id_user;
+        $username = $usr_tmp1[0]->username;
         
         $data['usr']  = $usr_tmp2;
-        $data['foto_profile']  = $usr_tmp1[0]->foto_profile;
-        $data['id_user']  = $id_user;
+        $data['foto']  = $usr_tmp1[0]->foto;
+        $data['username']  = $username;
         
         $data['usr']  = $usr_tmp2;
-        $data['id_user']  = $id_user;
+        $data['username']  = $username;
         $data['usr']  = $usr_tmp2;
 		
 		$this->load->view("index",$data);
 	}
 	
-	function do_edit($id_user) {
+	function do_edit($username) {
         $post = $this->input->post(NULL, TRUE);
-        $foto_profile = $_FILES ['foto_profile']['name'];
-        if(!empty($foto_profile)) {
-            $path = 'upload/'.$foto_profile;
-            $post['foto_profile'] = $path;
+        $foto = $_FILES ['foto']['name'];
+        if(!empty($foto)) {
+            $path = 'upload/'.$foto;
+            $post['foto'] = $path;
         }
 		$this->load->model("usrprof_model");
-		$this->usrprof_model->update("id_user ='$id_user'", $post);
-        $tmp_foto_profile = $_FILES['foto_profile']['tmp_name'];
-        move_uploaded_file($tmp_foto_profile, $path);
+		$this->usrprof_model->update("username ='$username'", $post);
+        $tmp_foto = $_FILES['foto']['tmp_name'];
+        move_uploaded_file($tmp_foto, $path);
         
         
 		$this->session->set_flashdata("success", "Berhasil mengubah data");
@@ -207,17 +207,17 @@ class Usrprof extends CI_Controller {
         redirect("usrprof");
 	}
 	
-	function delete($id) {
+	function delete($username) {
 		$this->load->model("usrprof_model");
-		$this->flight_model->delete("id ='$id'");
+		$this->flight_model->delete("username ='$username'");
 		$this->session->set_flashdata("success", "Berhasil menghapus data");
 		redirect("usrprof");
 	}
     
-    function profile($id) {
+    function profile($username) {
 		$this->load->model("usrprof_model");
         
-		$result = $this->usrprof_model->read("id = '$id'");
+		$result = $this->usrprof_model->read("username = '$username'");
 
 		$data['result'] = $result;
 
