@@ -24,12 +24,12 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.php"><span><img src="<?php echo base_url() ?>/media/img/logo.png?>" class="foto-profile"/></span> APPRON</a>
+        <a class="navbar-brand" href="<?= base_url('index.php/Home') ?>"><span><img src="<?php echo base_url() ?>/media/img/logo.png?>" class="foto-profile"/></span> APPRON</a>
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+          <li class="active"><a href="<?= base_url('index.php/Home') ?>"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
           <li><a href="<?php echo site_url("resep/tambah")?>?username=<?php echo $_SESSION['username']; ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Share New Recipe</a></li>
         </ul>
 
@@ -37,7 +37,7 @@
           <li class="dropdown">
             <a href="#/available#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span><img src="<?php echo base_url() ?>/media/img/<?php echo $_SESSION['foto']?>" class="foto-profile"/></span>&nbsp;<?php echo $_SESSION['username'] ?> <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="profile.php"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profile</a></li>
+              <li><a href="usrprof"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profile</a></li>
               <li><a href="myvideo.php"><span class="glyphicon glyphicon-play" aria-hidden="true"></span> My Videos</a></li>
               <?php if($_SESSION['level'] == 1) { ?>
               <li><a href="admin.php"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Admin Panel</a></li>
