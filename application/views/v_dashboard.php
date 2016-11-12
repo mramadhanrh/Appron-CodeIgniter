@@ -1,3 +1,4 @@
+
 <div class="col-lg-12">
   <form action="search.php?search=<?php echo $search ?>">
       <div class="field" id="searchform">
@@ -27,7 +28,7 @@
          <div class="item">
           <img src="<?php echo base_url()?>media/img/2.jpg" width="100%" height="345">
          </div>
-    
+
          <div class="item">
           <img src="<?php echo base_url()?>media/img/3.jpg" width="100%" height="345">
          </div>
@@ -52,11 +53,11 @@
         <div class="overlay"></div>
         </a>
         <img src="<?php echo base_url() ?>/media/img/<?php echo $row->foto ?>">
-      </div>      
+      </div>
     </div>
   </div>
   <?php $i++ ?>
-  <?php 
+  <?php
   if($i >= 20){
     break;
   }
@@ -64,4 +65,3 @@
   <?php }?>
   </div>
   </center>
-  

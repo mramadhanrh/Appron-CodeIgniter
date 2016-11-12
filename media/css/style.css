@@ -194,7 +194,7 @@
 
 .signup-label:hover{
 	color: #4d4d4d;
-	text-decoration: none;	
+	text-decoration: none;
 }
 
 .label-user{
@@ -205,7 +205,7 @@
 }
 .link a{
 	text-decoration: none;
-	color: #fff; 
+	color: #fff;
 }
 
 .icon{
@@ -274,12 +274,12 @@
 
 }
 
-input[type=search] { 
-	color: #333;  
+input[type=search] {
+	color: #333;
 	text-align: left;
-	display: block; 
-	width: 50%; 
-	letter-spacing: 1px;        
+	display: block;
+	width: 50%;
+	letter-spacing: 1px;
 	padding: 20px;
 	font-size: 14px;
 	border-radius: 100px;
@@ -289,14 +289,6 @@ input[type=search] {
 	margin-top: 30%;
 	margin-left: 25%;
 	z-index: 3;
-}
-
-.radius1{
-	border-radius: 1000px 0px 0px 1000px;
-}
-
-.radius2{
-	border-radius: 0px 1000px 1000px 0px;
 }
 
 .field {
@@ -322,7 +314,8 @@ input[type=search] {
 }
 
 .field>button {
-  padding: 15px;
+  padding: 5px;
+	padding-left: 20px;
   background-color:#c0392b;
   color:white;
   outline: none;
@@ -368,7 +361,7 @@ input[type=search] {
 }
 
 .footers {
-	margin-top: 0px;	
+	margin-top: 0px;
     background-color:#ecf0f1;
     color:black;
     clear:both;
@@ -462,12 +455,12 @@ input[type=search] {
 }
 
 .margined h3{
-	font-family: 'bebas_neueregular';	
+	font-family: 'bebas_neueregular';
 
 }
 
 .caption h3{
-	font-family: 'bebas_neueregular';	
+	font-family: 'bebas_neueregular';
 	font-size: 20px;
 
 }
@@ -495,7 +488,7 @@ input[type=search] {
 }
 
 /*Play Button*/
-.thumb {position: relative; width: 270px; height: 270px;}	
+.thumb {position: relative; width: 270px; height: 270px;}
 .thumb img{width: 270px; height: 270px;}
 .thumb a {position: absolute; top: 0; display: block; width: 100%; height: 100%; text-align: center; text-decoration: none;}
 .thumb a .play, .thumb a .overlay {opacity: 0;}

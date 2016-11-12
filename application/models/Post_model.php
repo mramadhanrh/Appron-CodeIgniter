@@ -11,7 +11,7 @@ class Post_model extends CI_Model {
 
 		$this->db->select('*');
 		$this->db->from('t_user');
-		$this->db->join('t_resep', 't_user.id_user = t_resep.id_user');
+		$this->db->join('t_resep', 't_user.username = t_resep.username');
 		$this->db->where('t_resep.id_resep', $id_resep);
 		$query = $this->db->get();
 		if($query AND $query->num_rows() != 0){
@@ -19,6 +19,10 @@ class Post_model extends CI_Model {
 		} else {
 			return array();
 		}
+	}
+
+	function create($data){
+		$this->db->insert("t_resep", $data);
 	}
 
 }

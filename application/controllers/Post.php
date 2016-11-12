@@ -10,4 +10,10 @@
 			$this->load->view("index", $data);
 			$this->load->model("post_model");
 		}
+		function tambah(){
+			$this->load->model("Post_model");
+			$data['view'] = "resep/form";
+			$this->load->view("resep/form", $data);
+		}
+
 	}

@@ -28,8 +28,8 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>	
-					<li><a href="inputresep.php?id_user=<?php echo $_SESSION['id_user']; ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Share New Recipe</a></li>					
+					<li><a href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+					<li><a href="inputresep.php?username=<?php echo $_SESSION['username']; ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Share New Recipe</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -59,28 +59,28 @@
                 	<source src="<?php echo base_url() ?>/media/vid/<?php echo @$result->video ?>" type="video/mp4">
                 	Your browser does not support the video tag.
                 </video>
-                <a href="<?php echo base_url() ?>/report/cetak.php?id_resep=<?php echo $id_resep ?>" class="btn-download pull-right" ><i class="glyphicon glyphicon-circle-arrow-down"></i></a>
+                <a href="post?id_resep=<?php echo $row->id_resep ?>" class="btn-download pull-right" ><i class="glyphicon glyphicon-circle-arrow-down"></i></a>
             	<h4><?php echo @$result->judul ?>
             	<!-- <label class="pull-right clicked-red">&nbsp;<?php echo @$result->tidak_suka ?></label>
             	<i class="glyphicon glyphicon-thumbs-down pull-right clicked-red"></i>
             	<label class="pull-right clicked-green">&nbsp;<?php echo @$result->suka ?><label>&nbsp;&nbsp;</label></label>
-            	<i class="glyphicon glyphicon-thumbs-up pull-right clicked-green"></i><label class="pull-right">&nbsp;&nbsp;</label>       
+            	<i class="glyphicon glyphicon-thumbs-up pull-right clicked-green"></i><label class="pull-right">&nbsp;&nbsp;</label>
             	<button class="btn-download pull-right"><i class="glyphicon glyphicon-arrow-down "></i></button>
             	 --></h4>
             </div>
             <div class="container">
             	<div class="col-md-2"></div>
-        	    <div class="col-md-8">  
-        	    	<a href="other-profile.php?id_user=<?php echo @$result->id_user ?>"><img src="<?php echo base_url() ?>/media/img/<?php echo @$result->foto_profile ?>" class="thread-starter"/></a> 
+        	    <div class="col-md-8">
+        	    	<a href="other-profile.php?id_user=<?php echo @$result->id_user ?>"><img src="<?php echo base_url() ?>/media/img/<?php echo @$result->foto_profile ?>" class="thread-starter"/></a>
             		<textarea class="thread-bio" style="overflow:hidden" readonly><?php echo @$result->bio ?><?php echo "\n";?>- <?php echo @$result->fullname ?></textarea>
-            		
+
             	</div>
             </div>
         </div>
     </div>
 	</div>
 		<h1 class="text-center head-text">Maybe You Like ?</h1>
-	<div class="bg-post">	
+	<div class="bg-post">
 	<?php $i=0 ?>
 	<?php while ($row = mysqli_fetch_object($data)) {?>
 	<div class="col-lg-2">
@@ -92,11 +92,11 @@
 	 			<div class="overlay"></div>
 				</a>
 				<img src="<?php echo base_url() ?>/media/img/<?php echo $row->foto ?>">
-			</div>			
+			</div>
 		</div>
 	</div>
 	<?php $i++ ?>
-	<?php 
+	<?php
 	if($i >= 6){
 		break;
 	}
@@ -146,7 +146,7 @@
 			</tr>
 		</table>
 		<?php }?>
-		
+
 	</div>
 	<div class="margined">&nbsp;</div>
 

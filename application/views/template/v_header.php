@@ -29,8 +29,8 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>  
-          <li><a href="inputresep.php?id_user=<?php echo $_SESSION['id_user']; ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Share New Recipe</a></li>          
+          <li class="active"><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+          <li><a href="<?php echo site_url("resep/tambah")?>?username=<?php echo $_SESSION['username']; ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Share New Recipe</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
@@ -60,8 +60,8 @@
             <h2><img src="<?php echo base_url()?>/media/img/logotext.png" class="logotext"/></h2>
           </div>
         </div>
-        
-        
+
+
         <div class="col-lg-8">
         </div>
         <div class="col-lg-3">
@@ -73,7 +73,7 @@
           <div class="col-lg-6 link">
             <a href="<?php echo base_url('index.php/Signup')?>"><div class="boxes2">
               <h3>SIGN UP</h3>
-            </div></a>  
+            </div></a>
           </div>
         </div>
         <?php } ?>
